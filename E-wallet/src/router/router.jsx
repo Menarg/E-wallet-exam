@@ -12,10 +12,6 @@ const router = createBrowserRouter([
       path: '/newcard',
       element: <AddNewCard/>
     },
-    {
-        path: '*',
-        element: <ErrorPage />
-    }
 ]);
 
 export default router;

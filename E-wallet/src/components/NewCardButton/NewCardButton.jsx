@@ -1,17 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
-function NewCardButton(props) {
-    const { event } = props;
+function NewCardButton() {
     const navigate = useNavigate();
 
     function handleClick() {
-        navigate('/AddNewCard', { state: { event: event } });
+        navigate('/AddNewCard');
     }
 
     return (
         <article onClick={ handleClick }>
-            <h3>{ event.name }</h3>
-            <p>{ event.where }</p>
+            <h3>Add New Card</h3>
         </article>
     )
 }
