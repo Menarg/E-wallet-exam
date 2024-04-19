@@ -1,0 +1,70 @@
+.Card {
+    width: 95vw;
+    height: auto;
+    margin: auto;
+    background-color: #d6d6d6;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 1rem;
+}
+
+.bitcoin {
+    background-color: #fdb42d;
+}
+
+.blockchain {
+    background-color: #7328ff;
+}
+
+.evil {
+    background-color: #ff0749;
+}
+
+.ninja {
+    background-color: #222222;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chip {
+    width: auto;
+    height: auto;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardInfo p {
+    margin: 0;
+}
+
+label {
+    font-size: 0.6rem;
+}
+
+.cardName {
+    text-align: left;
+}
+
+.cardDate {
+    text-align: right;
+}
+
+.cardNumber {
+    font-size: 1.7rem;
+    margin: 0.5rem;
+}
+
+.chipDark {
+    color: black;
+}
+
+.chipLight {
+    color: white;
+}

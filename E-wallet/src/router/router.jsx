@@ -9,8 +9,8 @@ const router = createBrowserRouter([
       element: <Wallet/>
     },
     {
-      path: '/newcard',
-      element: <AddNewCard/>
+      path: '/AddNewCard',
+      element: <AddNewCard />
     },
 ]);
 

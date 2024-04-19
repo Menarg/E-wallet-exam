@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./NewCardButton.css"
 
 function NewCardButton() {
     const navigate = useNavigate();
@@ -8,8 +9,8 @@ function NewCardButton() {
     }
 
     return (
-        <article onClick={ handleClick }>
-            <h3>Add New Card</h3>
+        <article className="NewCardButton" onClick={ handleClick }>
+            <h3>ADD A NEW CARD</h3>
         </article>
     )
 }

@@ -1,0 +1,11 @@
+.NewCardButton {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    justify-self: flex-end;
+    margin: 0.5rem;
+}
+
+.NewCardButton h3 {
+    color: black;
+}
