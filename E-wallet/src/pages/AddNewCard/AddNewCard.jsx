@@ -6,17 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setNumber, setVendor, setChip, setDate, setName, setCCV } from '../../reducers/reducers';
 
+
+// Hi, i'm a dumbass who started too late and now i've no idea what i'm doing wrong but it's not working please help me.
+
 function AddNewCard(){
-
-    const [cardInfo, setCardInfo] = useState({
-        chip: 'chipDark',
-        vendor: 'none',
-        number: 'XXXX XXXX XXXX XXXX',
-        name: 'FIRSTNAME LASTNAME',
-        date: 'MM/YY',
-        CCV: 'XXX'
-      });
-
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
