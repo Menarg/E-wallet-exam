@@ -15,7 +15,8 @@ function App() {
     vendor: 'none',
     number: 'XXXX XXXX XXXX XXXX',
     name: 'FIRSTNAME LASTNAME',
-    date: 'MM/YY'
+    date: 'MM/YY',
+    CCV: 'XXX'
   });
 
   return (

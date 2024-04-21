@@ -5,8 +5,9 @@ const initialState = {
     vendor: 'none',
     number: 'XXXX XXXX XXXX XXXX',
     name: 'FIRSTNAME LASTNAME',
-    date: 'MM/YY'
-}
+    date: 'MM/YY',
+    CCV: 'XXX',
+};
 
 const cardSlice = createSlice({
     name: 'card',
@@ -26,10 +27,13 @@ const cardSlice = createSlice({
         },
         setDate(state, action) {
             state.date = action.payload;
+        },
+        setCCV(state, action) {
+            state.CCV = action-payload;
         }
     }
 });
 
 
-export const { setNumber, setVendor, setChip, setDate, setName } = cardSlice.actions;
+export const { setNumber, setVendor, setChip, setDate, setName, setCCV } = cardSlice.actions;
 export default cardSlice.reducer;
