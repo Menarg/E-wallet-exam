@@ -6,7 +6,6 @@ import blockchain from "../../assets/vendor-blockchain.svg";
 import evil from "../../assets/vendor-evil.svg";
 import ninja from "../../assets/vendor-ninja.svg";
 
-
 import { useContext } from "react";
 import { CardContext } from "../../App";
 
@@ -22,9 +21,9 @@ const chipImages = {
     "chipLight": chipLight,
 };
 
-function Card(){
-
-    const CardInfo = useContext(CardContext);
+function Card(props){
+    const { CardInfo } = props;
+    console.log(CardInfo);
     const img = vendorImages[CardInfo.vendor];
     const chip = chipImages[CardInfo.chip];
 
