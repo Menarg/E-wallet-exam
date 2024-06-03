@@ -23,7 +23,7 @@ const chipImages = {
 
 function Card(props){
     const { CardInfo } = props;
-    console.log(CardInfo);
+    // console.log(CardInfo);
     const img = vendorImages[CardInfo.vendor];
     const chip = chipImages[CardInfo.chip];
 

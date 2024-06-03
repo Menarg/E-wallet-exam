@@ -12,7 +12,7 @@ function App() {
 
   const [cardInfo, setCardInfo] = useState({
     chip: 'chipDark',
-    vendor: 'none',
+    vendor: '',
     number: 'XXXX XXXX XXXX XXXX',
     name: 'FIRSTNAME LASTNAME',
     date: 'MM/YY',

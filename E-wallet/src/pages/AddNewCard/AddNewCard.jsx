@@ -1,6 +1,6 @@
 import"./AddNewCard.css";
 import Card from "../../components/Card/Card";
-// import { NewCardContext, CardContext } from "../../App";
+import { NewCardContext } from "../../App";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -20,7 +20,7 @@ function AddNewCard(){
     const [newCardchip, setNewCardChip] = useState('chipDark');
 
     function  setNumber(number) {
-        console.log(number.target.value);
+        // console.log(number.target.value);
         setNewCardNumber(number.target.value)
     };
     function  setName(name) {
@@ -36,7 +36,7 @@ function AddNewCard(){
         setNewCardVendor(vendor.target.value)
     };
     function  setChip(chip) {
-        setNewCardChip(chip.target.value)
+        setNewCardChip(chip)
     };
 
     function cancel() {
@@ -54,6 +54,8 @@ function AddNewCard(){
 
     function createNewCard() {
 
+        // const createCard = useContext(NewCardContext);
+
         const card = {
             number: newCardNumber,
             name: newCardName,
@@ -67,8 +69,11 @@ function AddNewCard(){
             if (card.vendor = 'bitcoin' || '' ){ setChip('chipLight')
             } else { setChip('chipLight') }
             dispatch(setCard(card))
+            // createCard(card);
         };
+
         saveCard();
+        
     };
 
     return (
