@@ -8,7 +8,7 @@ function Wallet(){
 
     //placeholder
     const cardInfo = useContext(CardContext)
-    console.log(cardInfo);
+    // console.log(cardInfo);
     
     return (
         <>

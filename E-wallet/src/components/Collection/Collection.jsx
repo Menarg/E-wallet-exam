@@ -16,6 +16,7 @@ function WalletCollection() {
     // } 
     // console.log(collection);
 
+<<<<<<< Updated upstream
     // const cards = useSelector((state) => {
     //     return state.card;
     // });
@@ -30,6 +31,20 @@ function WalletCollection() {
     //         <Card CardInfo = { collection }/>
     //     </section>
     // )
+=======
+    // const collection = useContext(CardContext)
+
+    const cards = useReducer();
+    console.log(cards);
+
+    // const collection = cards.map()
+
+    return (
+        <section className="wallet-collection">
+            <Card CardInfo = { cards }/>
+        </section>
+    )
+>>>>>>> Stashed changes
     
 };
 
