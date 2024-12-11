@@ -1,22 +1,23 @@
 import"./AddNewCard.css";
 import Card from "../../components/Card/Card";
-import { NewCardContext } from "../../App";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCard } from '../../reducers/reducers';
+import { useCollection } from "../../context/CollectionContext";
 
 
 function AddNewCard(){
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const { setCollection } = useCollection();
 
     const [newCardNumber, setNewCardNumber] = useState('XXXX XXXX XXXX XXXX');
     const [newCardName, setNewCardName] = useState('FIRSTNAME LASTNAME');
     const [newCardDate, setNewCardDate] = useState('MM/YY');
     const [newCardCCV, setNewCardCCV] = useState('XXX');
-    const [newCardvendor, setNewCardVendor] = useState('');
+    const [newCardvendor, setNewCardVendor] = useState('bitcoin');
     const [newCardchip, setNewCardChip] = useState('chipDark');
 
     function  setNumber(number) {
@@ -54,8 +55,6 @@ function AddNewCard(){
 
     function createNewCard() {
 
-        // const createCard = useContext(NewCardContext);
-
         const card = {
             number: newCardNumber,
             name: newCardName,
@@ -66,15 +65,20 @@ function AddNewCard(){
         }
 
         function saveCard () {
-            if (card.vendor = 'bitcoin' || '' ){ setChip('chipLight')
-            } else { setChip('chipLight') }
+            if (card.vendor == 'bitcoin' || '' ){ setChip('chipLight')
+            } else {null}
             dispatch(setCard(card))
-            // createCard(card);
-        };
+        }
+        function addToCollection() {
+            // Add the card to collection
+            setCollection((prevCollection) => [...prevCollection, card]);
+        }
 
         saveCard();
-        
-    };
+        addToCollection();
+        // after saving, return to starpage
+        navigate('/');
+    }
 
     return (
         <>  
@@ -84,7 +88,7 @@ function AddNewCard(){
             </header>
             
             <label>NEW CARD</label>
-            <Card CardInfo= {card}/>
+            <Card cardInfo= {card}/>
             
             <section className="NewCardForm">
 

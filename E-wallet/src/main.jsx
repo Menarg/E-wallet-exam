@@ -4,11 +4,14 @@ import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
+import CollectionProvider from './context/CollectionContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store = {store}>
-      <App />
-    </Provider>
+    <CollectionProvider>
+      <Provider store = {store}>
+        <App />
+      </Provider>
+    </CollectionProvider>
   </React.StrictMode>,
 )

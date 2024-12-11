@@ -1,0 +1,32 @@
+.E-wallet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.Wallet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.collection {
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.active{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+label {
+    margin-top: 2rem;
+    font-size: large;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}

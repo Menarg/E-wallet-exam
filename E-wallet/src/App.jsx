@@ -9,7 +9,6 @@ const CardContext = createContext(undefined);
 const NewCardContext = createContext(undefined);
 
 function App() {
-
   const [cardInfo, setCardInfo] = useState({
     chip: 'chipDark',
     vendor: '',

@@ -6,9 +6,6 @@ import blockchain from "../../assets/vendor-blockchain.svg";
 import evil from "../../assets/vendor-evil.svg";
 import ninja from "../../assets/vendor-ninja.svg";
 
-// import { useContext } from "react";
-// import { CardContext } from "../../App";
-
 const vendorImages = {
     "bitcoin": bitcoin,
     "blockchain": blockchain,
@@ -22,29 +19,32 @@ const chipImages = {
 };
 
 function Card(props){
-    const { CardInfo } = props;
-    // console.log(CardInfo);
-    const img = vendorImages[CardInfo.vendor];
-    const chip = chipImages[CardInfo.chip];
+    const { cardInfo } = props;
+    if (!cardInfo) {
+        return <div>Something went wrong</div>; // Fallback UI when no card is selected
+    }
+
+    const img = vendorImages[cardInfo.vendor] || vendorImages["bitcoin"];
+    const chip = cardInfo.vendor === "bitcoin" ? chipDark : chipLight;
+    const textColor = `${cardInfo.vendor}-text`;
 
     return (
-        <div className={"Card " + CardInfo.vendor + " " + CardInfo.chip}>
-
+        <div className={"Card " + cardInfo.vendor + " " + cardInfo.chip}>
             <div className="top">
                 <img src={chip} className="chip" />
-                <img src={img} className={ "vendor " + CardInfo.vendor } />
+                <img src={img} className={ "vendor " + cardInfo.vendor } />
             </div>
             <div>
-                <h3 className="cardNumber">{CardInfo.number}</h3>
+                <h3 className={`cardNumber ${textColor}`}>{cardInfo.number}</h3>
             </div>
             <div className="cardInfo">
                 <article className="cardName">
-                    <label htmlFor="p">CARDHOLDER NAME</label>
-                    <p>{CardInfo.name}</p>
+                    <label className={textColor} htmlFor="p">CARDHOLDER NAME</label>
+                    <p className={textColor}>{cardInfo.name}</p>
                 </article>
                 <article className="cardDate">
-                    <label htmlFor="p">VALID THROUGH</label>
-                    <p>{CardInfo.date}</p>
+                    <label className={textColor} htmlFor="p">VALID THROUGH</label>
+                    <p className={textColor}>{cardInfo.date}</p>
                 </article>
             </div>
 

@@ -1,0 +1,5 @@
+.wallet-collection {
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+}

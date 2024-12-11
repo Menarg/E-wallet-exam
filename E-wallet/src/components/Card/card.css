@@ -2,14 +2,14 @@
     width: 25rem;
     max-width: 95vw;
     height: 14rem;
-    margin: auto;
+    margin: 0.1rem auto;
     background-color: #d6d6d6;
     padding: 1rem;
     display: flex;
     flex-flow: column wrap;
     border-radius: 1rem;
 }
-
+/* changes colour based on vendor choice */
 .bitcoin {
     background-color: #fdb42d;
 }
@@ -25,7 +25,23 @@
 .ninja {
     background-color: #222222;
 }
+/* changes text colour based on vendor choice */
+.bitcoin-text {
+    color: black;
+}
 
+.blockchain-text {
+    color: white;
+}
+
+.evil-text {
+    color: white;
+}
+
+.ninja-text {
+    color: white; 
+}
+/* */
 .top {
     display: flex;
     justify-content: space-between;
